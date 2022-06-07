@@ -1,9 +1,12 @@
+import search from "./components/search-icon.svg";
+import logo from "./components/m.svg";
 import axios from "axios";
 import {useState} from "react";
 import styled from "styled-components";
 import MovieComponent from "./components/MovieComponent";
 import MovieInfoComponent from "./components/MovieInfoComponent";
 export const API_KEY = "dc5d5b8b";
+
 
 const Container = styled.div`
   display: flex;
@@ -109,11 +112,11 @@ function App() {
     <Header>
       <AppName>
       
-        <MovieImage src="/m.png" />
+        <MovieImage src={logo} />
         Movie Monk
         </AppName>
         <SearchBox>
-          <SearchIcon src="search.png" />
+          <SearchIcon src={search} />
           <SearchInput placeholder="Search Movie" value={searchQuery} onChange={onTextChange}/>
         </SearchBox>
       </Header>
@@ -130,7 +133,7 @@ function App() {
               movie={movie} 
               onMovieSelect={onMovieSelect}   
               />) : (
-               <Placeholder src="/MovieMonk.png" />
+               <Placeholder src={logo} />
                )}
       <Footer> Created by @AyushKr15 </Footer>    
       </MovieListContainer>
